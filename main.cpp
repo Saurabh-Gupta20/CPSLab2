@@ -11,7 +11,7 @@ static LSM6DSLSensor acc_gyro(&devI2c,0xD4,D4,D5); // high address
 
 float computeAngle(int x, int y, int z){
     float res = 0;
-    res = atan( x /sqrt( pow(y, 2) + pow(z, 2)));
+    res = atan( (float)x /sqrt( pow((float)y, 2) + pow((float)z, 2)));
     res = (res * 180)/PI;
     return res;
 }
